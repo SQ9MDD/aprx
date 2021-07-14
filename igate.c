@@ -100,7 +100,8 @@ static const char *tnc2_forbidden_source_stationid(const char *t, const int stri
 	    memcmp("TCPIP", t, 5) == 0 ||	/* just plain wrong setting */
 	    memcmp("TCPXX", t, 5) == 0 ||	/* just plain wrong setting */
 	    memcmp("N0CALL", t, 6) == 0 ||	/* TNC default setting */
-	    memcmp("NOCALL", t, 6) == 0)	/* TNC default setting */
+	    memcmp("NOCALL", t, 6) == 0 ||	/* TNC default setting */
+		memcmp("LO0RA", t, 5) == 0)    /* testing filter */
 		return NULL;
 
 	return s;
